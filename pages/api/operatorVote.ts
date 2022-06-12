@@ -5,17 +5,20 @@ import { Prisma } from '@prisma/client'
 
 export default async function (req, res) {
   const { rating, userId, operatorId } = req.query;
+
+
   try {
-    prisma.operatorVotes.deleteMany({});
+
     let vote = await prisma.operatorVotes.upsert({
       where: { operatorId_userId: { operatorId, userId } },
       update: {
-        rating: new Prisma.Decimal(rating),
+        rating: rating <= 5 ? new Prisma.Decimal(rating) : undefined,
       },
       create: {
         operatorId: operatorId,
         rating: new Prisma.Decimal(rating),
-        userId: userId,
+        // @ts-ignore
+        userId: rating <= 5 ? new Prisma.Decimal(rating) : undefined,
       },
     });
     res.status(200).json(vote);
