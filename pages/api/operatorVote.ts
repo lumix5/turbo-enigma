@@ -26,5 +26,5 @@ export default async function (req, res) {
       res.status(403).json({ err: "Error occured." });
     }
   }
-  res.status(403).json({ err: "not valid number." });
+
 }

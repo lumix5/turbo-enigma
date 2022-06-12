@@ -24,6 +24,7 @@ import { Skeleton } from "@mui/material";
 import { Link } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
 import Head from "next/head";
+import Script from "next/script";
 
 const RatingComponent = dynamic(() => import("../components/Rating"), {
   ssr: false,
@@ -128,8 +129,26 @@ export default function App({ operators, result }) {
           name="keyword"
           content="rainbow six tier list, r6 tier list, rainbow six operator tier list, r6 operator tier list, r6 meta, Best Operator Rainbow Six, r6 meta"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GTM-WR6JDL9');
+        `}
+        </Script>
       </Head>
+
       <div className="">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WR6JDL9"
+            height="0"
+            width="0"
+            style={{display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <div className="flex flex-col flex-wrap items-center min-w-['90%']">
           {isDesktop && <Spacer />}
           <div className={"flex justify-center items-center flex-wrap"}>
