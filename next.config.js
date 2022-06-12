@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/operators',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/operators',
+        permanent: true,
+      },
+    ]
+  },
   reactStrictMode: true,
   typescript: {
     // !! WARN !!
