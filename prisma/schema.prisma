@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model OperatorVotes {
+  id         Int      @id @default(autoincrement())
+  operatorId String
+  operator   Operator @relation(fields: [operatorId], references: [id])
+  rating     Decimal  @db.Decimal(3, 2)
+  votedOn    DateTime @default(now()) @db.Timestamp(0)
+  userId     String   @db.Char(36)
+
+
+  @@unique([operatorId, userId])
+}
+
+model Operator {
+  id            String          @id @default(uuid())
+  name          String          @unique
+  position      String
+  healthRating  Int
+  speedRating   Int
+  operatorIcon  String
+  operatorVotes OperatorVotes[]
+}
