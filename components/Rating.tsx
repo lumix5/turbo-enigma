@@ -30,7 +30,7 @@ const StarRating = ({ ratedEntity }: any) => {
           setValue(newValue);
           await axios.post(`/api/operatorVote`, null, { params: {
               operatorId: ratedEntity.id,
-              rating: value,
+              rating: newValue,
               userId: userid,
             }})
           refresh();

@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <NextThemesProvider
-      defaultTheme="system"
+      defaultTheme="light"
       attribute="class"
       value={{
         light: lightTheme.className,

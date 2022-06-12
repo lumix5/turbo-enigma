@@ -23,7 +23,7 @@ import dynamic from "next/dynamic";
 import { Skeleton } from "@mui/material";
 import { Link } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
-import Head from 'next/head';
+import Head from "next/head";
 
 const RatingComponent = dynamic(() => import("../components/Rating"), {
   ssr: false,
@@ -63,7 +63,6 @@ export default function App({ operators, result }) {
 
   const { setTheme } = useNextTheme();
   const { isDark, type } = useTheme();
-  // console.log(operators);
 
   const columns = [
     { name: "POSITION", uid: "position" },
@@ -120,13 +119,10 @@ export default function App({ operators, result }) {
     <>
       <Head>
         <title>Rainbow Six Tier List</title>
-        <meta
-          name="title"
-          content="Rainbow six Meta/Tier List"
-        />
+        <meta name="title" content="Rainbow Six Tier List" />
         <meta
           name="description"
-          content="Rainbow six Meta/Tier List"
+          content="find out the best characters in p6 and vote yourself"
         />
         <meta
           name="keyword"
@@ -143,7 +139,7 @@ export default function App({ operators, result }) {
             >
               <Button auto flat>
                 <Text h2>
-                  <Link href='/operators'>Operators Tier List</Link>
+                  <Link href="/operators">Operators Tier List</Link>
                 </Text>
               </Button>
               <Button auto flat disabled>
@@ -167,7 +163,7 @@ export default function App({ operators, result }) {
                 onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
               />
               <Text h5 className={"m-3"}>
-                Night/Day Theme
+                Day/Night Theme
               </Text>
             </div>
           </div>
