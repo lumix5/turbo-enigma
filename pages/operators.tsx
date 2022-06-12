@@ -129,17 +129,17 @@ export default function App({ operators, result }) {
           name="keyword"
           content="rainbow six tier list, r6 tier list, rainbow six operator tier list, r6 operator tier list, r6 meta, Best Operator Rainbow Six, r6 meta"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+
+      </Head>
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'GTM-WR6JDL9');
         `}
-        </Script>
-      </Head>
-
+      </Script>
       <div className="">
         <noscript>
           <iframe
