@@ -93,7 +93,7 @@ export default function App({ operators, result }) {
       case "operatorIcon":
         return (
           <div className={"flex justify-center"}>
-            <Image src={operator?.operatorIcon} height="50" width="50" />
+            <Image src={operator?.operatorIcon} height="50" width="50" alt='operator icon'/>
           </div>
         );
       case "speedRating":
@@ -188,9 +188,11 @@ export default function App({ operators, result }) {
           </div>
           <Spacer />
           {isDesktop ? (
-            <p className={"text-xl"}>Rainbow Six Operators Tier List</p>
+            <Text  h1
+                   size={25}
+                   weight="bold">Rainbow Six Operators Tier List</Text>
           ) : (
-            <p className={"text-md"}>Rainbow Six Operators Tier List</p>
+            <Text h1 size={20}>Rainbow Six Operators Tier List</Text>
           )}
 
           <Spacer />
