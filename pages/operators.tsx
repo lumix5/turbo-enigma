@@ -131,24 +131,20 @@ export default function App({ operators, result }) {
         />
 
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZVKEZB5WMT"
+        strategy="afterInteractive"
+      />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'GTM-WR6JDL9');
+          gtag('config', 'G-ZVKEZB5WMT');
         `}
       </Script>
       <div className="">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WR6JDL9"
-            height="0"
-            width="0"
-            style={{display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
         <div className="flex flex-col flex-wrap items-center min-w-['90%']">
           {isDesktop && <Spacer />}
           <div className={"flex justify-center items-center flex-wrap"}>
