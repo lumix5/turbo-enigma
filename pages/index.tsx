@@ -50,9 +50,10 @@ export function useRouterRefresh() {
   const router = useRouter();
   const { asPath, replace } = router;
 
-  return useCallback(() => replace(asPath, undefined, { scroll: false }), [
-    asPath,
-  ]);
+  return useCallback(
+    () => replace(asPath, undefined, { scroll: false }),
+    [asPath]
+  );
 }
 
 export default function App({ operators, result }) {
@@ -93,7 +94,12 @@ export default function App({ operators, result }) {
       case "operatorIcon":
         return (
           <div className={"flex justify-center"}>
-            <Image src={operator?.operatorIcon} height="50" width="50" alt='operator icon'/>
+            <Image
+              src={operator?.operatorIcon}
+              height="50"
+              width="50"
+              alt="operator icon"
+            />
           </div>
         );
       case "speedRating":
@@ -129,7 +135,6 @@ export default function App({ operators, result }) {
           name="keyword"
           content="rainbow six tier list, r6 tier list, rainbow six operator tier list, r6 operator tier list, r6 meta, Best Operator Rainbow Six, r6 meta"
         />
-
       </Head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-ZVKEZB5WMT"
@@ -154,7 +159,7 @@ export default function App({ operators, result }) {
             >
               <Button auto flat>
                 <Text h2>
-                  <Link href="/operators">Operators Tier List</Link>
+                  <Link href="/">Operators Tier List</Link>
                 </Text>
               </Button>
               <Button auto flat disabled>
@@ -184,11 +189,13 @@ export default function App({ operators, result }) {
           </div>
           <Spacer />
           {isDesktop ? (
-            <Text  h1
-                   size={25}
-                   weight="bold">Rainbow Six Operators Tier List</Text>
+            <Text h1 size={25} weight="bold">
+              Rainbow Six Operators Tier List
+            </Text>
           ) : (
-            <Text h1 size={20}>Rainbow Six Operators Tier List</Text>
+            <Text h1 size={20}>
+              Rainbow Six Operators Tier List
+            </Text>
           )}
 
           <Spacer />
