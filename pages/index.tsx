@@ -129,7 +129,7 @@ export default function App({ operators, result }) {
         <meta name="title" content="Rainbow Six Tier List" />
         <meta
           name="description"
-          content="find out the best characters in p6 and vote yourself"
+          content="This website is a tier list for the game Tom Clancy's Rainbow Six Siege. The data is community based, you can give ratings to your favorite operators"
         />
         <meta
           name="keyword"
