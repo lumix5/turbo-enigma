@@ -23,8 +23,8 @@ import dynamic from "next/dynamic";
 import { Skeleton } from "@mui/material";
 import { Link } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
-import Head from "next/head";
 import Script from "next/script";
+import { NextSeo } from "next-seo";
 
 const RatingComponent = dynamic(() => import("../components/Rating"), {
   ssr: false,
@@ -124,18 +124,11 @@ export default function App({ operators, result }) {
   };
   return (
     <>
-      <Head>
-        <title>Rainbow Six Tier List</title>
-        <meta name="title" content="Rainbow Six Tier List" />
-        <meta
-          name="description"
-          content="This website is a tier list for the game Tom Clancy's Rainbow Six Siege. The data is community based, you can give ratings to your favorite operators"
-        />
-        <meta
-          name="keyword"
-          content="rainbow six tier list, r6 tier list, rainbow six operator tier list, r6 operator tier list, r6 meta, Best Operator Rainbow Six, r6 meta"
-        />
-      </Head>
+      <NextSeo
+        title="Rainbow Six Tier List"
+        description="Looking for the best operators in Rainbow Six Siege? Find the best pick for every role to climb with Rainbow Six Tier List"
+        canonical="https://www.r6tierlist.site/"
+      />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-ZVKEZB5WMT"
         strategy="afterInteractive"
