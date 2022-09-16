@@ -129,7 +129,7 @@ export default function App({ operators, result }) {
         description="Looking for the best operators in Rainbow Six Siege? Find the best pick for every role to climb with Rainbow Six Tier List"
         canonical="https://www.r6tierlist.site/"
         additionalMetaTags={[{
-          property: 'yandex-verification',
+          name: 'yandex-verification',
           content: '0f2f531ea9a813a4'
         }]}
       />
