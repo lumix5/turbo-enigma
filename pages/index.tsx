@@ -128,6 +128,10 @@ export default function App({ operators, result }) {
         title="Rainbow Six Tier List"
         description="Looking for the best operators in Rainbow Six Siege? Find the best pick for every role to climb with Rainbow Six Tier List"
         canonical="https://www.r6tierlist.site/"
+        additionalMetaTags={[{
+          property: 'yandex-verification',
+          content: '0f2f531ea9a813a4'
+        }]}
       />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-ZVKEZB5WMT"
